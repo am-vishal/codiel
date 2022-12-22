@@ -11,3 +11,11 @@ db.on("error", console.error.bind(console, "Error connecting to MongoDB"))
 db.once('open', function () {
     console.log("Successfully connected to the database:: MongoDB");
 });
+
+// const mongoose = require('mongoose');
+
+// mongoose.set("strictQuery", false);
+
+// mongoose.connect('mongodb://localhost:27017/subscriberApr', () => {
+//   console.log("Connected to MongoDB");
+// });
