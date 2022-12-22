@@ -1,12 +1,16 @@
-<h1>
-    Codeial / <%= title %>
-</h1>
-
-
+<link rel="stylesheet" href="/css/main.css" />
+<div class="home-heading">
+  <h1><%= title %></h1>
+</div>
 <section id="feed-posts">
-    <h4>Posts</h4>
-    <form action="/posts/create" id="new-post-form" method="POST">
-        <textarea name="content" cols="30" rows="3" placeholder="Type Here..."></textarea>
-        <input type="submit" value="Post">
-    </form>
+  <h4>Posts</h4>
+  <form action="/posts/create" id="new-post-form" method="POST">
+    <textarea
+      name="content"
+      cols="30"
+      rows="3"
+      placeholder="Type Here..."
+    ></textarea>
+    <input type="submit" value="Post" />
+  </form>
 </section>
