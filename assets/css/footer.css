@@ -1,0 +1,12 @@
+footer {
+  color: #e31b6d;
+  color: #4f08d0;
+  background: #1e242c;
+  line-height: 20px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  width: 100%;
+  bottom: 0;
+  position: relative;
+  text-align: center;
+}
