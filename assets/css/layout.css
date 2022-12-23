@@ -6,34 +6,25 @@ body {
 }
 
 #layout-main {
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-h1,
-p,
-h4 {
-  color: #fff;
-}
 
 .home-heading {
-  margin: 2em auto;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: auto;
-  position: absolute;
+  /* position: absolute; */
+  /* top: 85px; */
 }
 
 #feed-posts {
-  margin-top: 9em;
+  margin-top: 4em;
+  width: 100%;
 }
 
 .signin-main {
   height: 343px;
   width: 27em;
-  margin-top: 1em;
+  margin: 6em auto;
   background: red;
   overflow: hidden;
   background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38")
@@ -44,8 +35,18 @@ h4 {
 .signup-main {
   height: 446px;
   width: 27em;
-  margin-top: 1em;
   background: red;
+  overflow: hidden;
+  background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38")
+    no-repeat center/ cover;
+  border-radius: 10px;
+  box-shadow: 5px 20px 50px #000;
+  margin: 6em auto;
+}
+.posts-main {
+  height: 346px;
+  width: 50%;
+  margin-top: 1em;
   overflow: hidden;
   background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38")
     no-repeat center/ cover;
@@ -72,8 +73,15 @@ label {
   font-weight: bold;
   transition: 0.5s ease-in-out;
 }
+.post-label {
+  color: #fff;
+  justify-content: center;
+  display: flex;
+  font-weight: bold;
+}
 
-input {
+input,
+textarea {
   width: 60%;
   /* height: 20px; */
   background: #e0dede;
