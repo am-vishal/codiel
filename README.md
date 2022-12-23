@@ -1,5 +1,2 @@
-![Sign_in_img][signin]
-![Sign_up_img][signup]
-
-[signin]: ../../sign_in.png
-[signup]: ../../sign_up.png
+![sign_in_img](https://raw.githubusercontent.com/am-vishal/codiel/master/assets/images/sign_in.png)
+![sign_up_img](https://raw.githubusercontent.com/am-vishal/codiel/master/assets/images/sign_up.png)
