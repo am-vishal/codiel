@@ -4,8 +4,4 @@ $black: #000 !default;
 $border-radius: 0.25rem !default;
 $box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
 
-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+$lg: linear-gradient(358deg, #443e82, white);
