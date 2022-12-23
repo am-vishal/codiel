@@ -36,9 +36,12 @@
           <div class="projcard-textbox">
             <div class="projcard-title"><%= post.user.name %></div>
             <!-- <div class="projcard-subtitle"><%= post.subtitle %></div> -->
-            <!-- <div class="projcard-bar"></div>
-              <div class="projcard-description">
-              </div> -->
+            <div class="projcard-bar"></div>
+            <div class="projcard-description">
+              <% if (locals.user && locals.user.id==post.user.id){ %>
+              <a href="/posts/destroy/<%=post.id%>">Delete</a>
+              <% } %>
+            </div>
             <% if (locals.user){ %>
             <form action="/comments/create" method="POST">
               <input
