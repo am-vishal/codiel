@@ -1,8 +1,6 @@
 <header>
-  <div class="navbar">
+  <div class="custom-navbar">
     <a href="/">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
     <% if (locals.user){ %>
     <a href="/users/sign-out">Sign Out</a>
     <a href="/users/profile"> <%= user.name %> </a>
