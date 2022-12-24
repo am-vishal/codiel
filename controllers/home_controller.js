@@ -1,9 +1,9 @@
 const Post = require("../models/post");
+const User = require("../models/user");
 
 
 
 module.exports.home = (req, res) => {
-    // res.cookie("user_id", 25)
     Post.find({})
         .populate('user')
         .populate({
@@ -13,9 +13,13 @@ module.exports.home = (req, res) => {
             }
         })
         .exec((err, posts) => {
-            return res.render("home", {
-                title: "Codiel | Home",
-                posts: posts
+            User.find({}, (err, users) => {
+                return res.render("home", {
+                    title: "Codiel | Home",
+                    posts: posts,
+                    all_users: users
+                })
+
             })
         })
 }

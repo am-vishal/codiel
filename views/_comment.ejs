@@ -1,0 +1,23 @@
+<div class="card m-2 p-1 comment" id="<%= post._id %>">
+  <div class="user-banner">
+    <div class="user">
+      <div class="avatar">
+        <img src="https://randomuser.me/api/portraits/men/1.jpg" />
+      </div>
+      <h5><%= comment.user.name %></h5>
+    </div>
+  </div>
+  <div class="card-text"><%= comment.content %></div>
+  <div class="d-flex flex-row mt-1 ellipsis">
+    <% if (locals.user && locals.user.id==comment.user.id){ %>
+    <a href="/comments/destroy/<%= comment.id %>">Delete</a>
+    <% } %>
+  </div>
+  <div class="footer">
+    <cite title="Source Title" style="font-size: 10px">
+      <%= comment.createdAt.toDateString()+ ", "
+      +comment.createdAt.toLocaleString('en-US', { hour: 'numeric', minute:
+      'numeric', hour12: true }) %>
+    </cite>
+  </div>
+</div>
