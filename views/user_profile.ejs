@@ -1,14 +1,15 @@
 <link rel="stylesheet" href="/css/user_profile.css" />
 
-<div class="card">
-  <img
-    src="https://avatars.githubusercontent.com/u/53686943?s=400&u=6156ba99218447516fb309e4984ae48c29b2fcc7&v=4"
-    alt="img"
-  />
+<div class="profile-card card">
+  <img src="<%= user.avatar %>" alt="img" />
   <div class="content">
     <% if(user.id == profile_user.id){ %>
     <!-- if user matches then show the form -->
-    <form action="/users/update/<%= profile_user.id %>" method="POST">
+    <form
+      action="/users/update/<%= profile_user.id %>"
+      method="POST"
+      enctype="multipart/form-data"
+    >
       <input
         type="text"
         name="name"
@@ -23,6 +24,7 @@
         value="<%= profile_user.email %>"
         required
       />
+      <input type="file" name="avatar" placeholder="Profile picture" />
       <input type="submit" value="Update" />
     </form>
 

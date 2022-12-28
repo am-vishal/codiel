@@ -3,10 +3,10 @@
     <a href="/">Home</a>
     <% if (locals.user){ %>
     <a href="/users/sign-out">Sign Out</a>
-    <a href="/users/profile"> <%= user.name %> </a>
+    <a href="/users/profile/<%= user.id %>"> <%= user.name %> </a>
     <% }else{ %>
     <a href="/users/sign-up">Sign Up</a>
-    <a href="/users/sign-in">Sign In</a>    
+    <a href="/users/sign-in">Sign In</a>
     <% } %>
   </div>
 </header>
