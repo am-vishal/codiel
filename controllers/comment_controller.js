@@ -1,5 +1,6 @@
 const Comment = require('../models/comment');
 const Post = require('../models/post');
+const commentsMailer = require('../mailers/comments_mailer');
 
 module.exports.create = async (req, res) => {
     try {
@@ -12,10 +13,12 @@ module.exports.create = async (req, res) => {
             });
             post.comments.push(comment);
             post.save();
+            comment = await comment.populate([{ path: 'user', select: 'name email' }]);
+            req.flash('success', 'Comment published!');
             res.redirect('/');
         }
     } catch (err) {
-        console.log('Error', err);
+        req.flash('error', err);
         return;
     }
 }
@@ -28,12 +31,14 @@ module.exports.destroy = async (req, res) => {
             let postId = comment.post;
             comment.remove();
             let post = Post.findByIdAndUpdate(postId, { $pull: { comments: req.params.id } });
+            req.flash('success', 'Comment deleted!');
             return res.redirect('back');
         } else {
+            req.flash('error', 'Unauthorized');
             return res.redirect('back');
         }
     } catch (err) {
-        console.log('Error', err);
+        req.flash('error', err);
         return;
     }
 
