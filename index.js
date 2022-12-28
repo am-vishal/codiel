@@ -26,7 +26,6 @@ app.use(expressLayouts);
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
-
 // set up the view engine
 app.set('view engine', 'ejs');
 app.set('views', './views');
