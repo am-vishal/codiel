@@ -2,3 +2,4 @@ node_modules
 config/secret.js
 config/key.js
 desktop.ini
+.env

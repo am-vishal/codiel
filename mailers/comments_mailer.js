@@ -1,10 +1,11 @@
 const nodeMailer = require('../config/nodemailer');
+require('dotenv').config();
 
 // this is another way of exporting a method
 exports.newComment = (comment) => {
-    console.log('inside newComment mailer', comment);
+    console.log('inside newComment mailer', comment.user);
     nodeMailer.transporter.sendMail({
-        from: 'thevoidmatrix@gmail.com',
+        from: process.env.NODEMAILER_FROM,
         to: comment.user.email,
         subject: "New Comment Published!",
         html: '<h1>Yup, your comment is now published!</h1>'
