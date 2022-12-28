@@ -11,12 +11,15 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
-
+const passportJwt = require('./config/passport-jwt-strategy');
+const passportGoogle = require('./config/passport-google-oauth2-strategy');
 app.use(express.urlencoded({ extended: true }))
 
 app.use(cookieParser());
 
 app.use(express.static('./assets'));
+// make the upload path available to the browswer
+app.use('/uploads', express.static(__dirname + '/uploads'))
 
 app.use(expressLayouts);
 // extract style and scripts from sub pages into the layout
