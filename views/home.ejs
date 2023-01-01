@@ -5,6 +5,7 @@
   crossorigin="anonymous"
 />
 <link rel="stylesheet" href="/css/main.css" />
+<link rel="stylesheet" href="/css/chat_box.css" />
 <section id="feed-posts">
   <div class="home-heading text-light">
     <h1><%= title %></h1>
@@ -38,3 +39,18 @@
   </p>
   <% } %>
 </section>
+
+<%- include('_chat_box') -%>
+
+<!-- importing this script for creating the comments -->
+<script src="/assets/js/home_post_comments.js"></script>
+<script src="/assets//js/home_posts.js"></script>
+
+<!-- CHANGE :: import the script file for toggle likes, also run it over for the already present posts and comments on the page -->
+<script src="/assets//js/toggle_likes.js"></script>
+<script>
+  $(".toggle-like-button").each(function () {
+    let self = this;
+    let toggleLike = new ToggleLike(self);
+  });
+</script>

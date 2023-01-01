@@ -8,6 +8,17 @@
     </div>
   </div>
   <div class="card-text"><%= comment.content %></div>
+  <small>
+    <% if (locals.user){ %>
+    <a
+      class="toggle-like-button"
+      data-likes="<%= comment.likes.length %>"
+      href="/likes/toggle/?id=<%=comment._id%>&type=Comment"
+    >
+      <%= comment.likes.length %> Likes
+    </a>
+    <% }else{ %> <%= comment.likes.length %> Likes <% } %>
+  </small>
   <div class="d-flex flex-row mt-1 ellipsis">
     <% if (locals.user && locals.user.id==comment.user.id){ %>
     <a href="/comments/destroy/<%= comment.id %>">Delete</a>

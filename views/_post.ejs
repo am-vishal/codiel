@@ -36,6 +36,19 @@
               <i class="fa fa-heart"></i> <i class="fa fa-smile-o ml-2"></i>
             </div>
             <div class="d-flex flex-row muted-color">
+              <small>
+                <% if (locals.user){ %>
+                <a
+                  class="toggle-like-button"
+                  data-likes="<%= post.likes.length %>"
+                  href="/likes/toggle/?id=<%=post._id%>&type=Post"
+                >
+                  <%= post.likes.length %> Likes
+                </a>
+                <% }else{ %> <%= post.likes.length %> Likes <% } %>
+              </small>
+            </div>
+            <div class="d-flex flex-row muted-color">
               <span><%=post.comments.length %> comments</span>
             </div>
           </div>
