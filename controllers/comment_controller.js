@@ -1,5 +1,6 @@
 const Comment = require('../models/comment');
 const Post = require('../models/post');
+const Like = require('../models/like');
 const commentsMailer = require('../mailers/comments_mailer');
 
 module.exports.create = async (req, res) => {
@@ -14,6 +15,7 @@ module.exports.create = async (req, res) => {
             post.comments.push(comment);
             post.save();
             comment = await comment.populate([{ path: 'user', select: 'name email' }]);
+            commentsMailer.newComment(comment);
             req.flash('success', 'Comment published!');
             res.redirect('/');
         }
@@ -31,6 +33,7 @@ module.exports.destroy = async (req, res) => {
             let postId = comment.post;
             comment.remove();
             let post = Post.findByIdAndUpdate(postId, { $pull: { comments: req.params.id } });
+            await Like.deleteMany({ likeable: comment._id, onModel: 'Comment' });
             req.flash('success', 'Comment deleted!');
             return res.redirect('back');
         } else {
@@ -41,5 +44,4 @@ module.exports.destroy = async (req, res) => {
         req.flash('error', err);
         return;
     }
-
 }
