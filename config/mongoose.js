@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+const env = require('./environment');
 // mongoose.connect('mongodb://0.0.0.0:27017/codiel_development');
 
 // const db = mongoose.connection;
@@ -15,6 +15,6 @@ const mongoose = require("mongoose");
 // const mongoose = require('mongoose');
 
 mongoose.set("strictQuery", false);
-mongoose.connect("mongodb://0.0.0.0:27017/codiel_development", () => {
+mongoose.connect(`mongodb://0.0.0.0:27017/${env.db}`, () => {
     console.log("Connected to MongoDB");
 });
